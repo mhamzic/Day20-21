@@ -1,0 +1,106 @@
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 836px; /* the inital width of the textarea */
+  height: 10em; /* the inital height of the textarea */
+  padding: 1em;
+  margin-top: 0;
+  border: 0.1em solid #ccc;
+  border-radius: 0.5em;
+  background-color: #ffffe6;
+  font-size: 1.2rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+h2 {
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+
+.keyboard-hidden {
+  visibility: hidden;
+}
+
+.keyboard-base {
+  position: absolute;
+  bottom: 10px;
+  max-width: 880px;
+  width: 100%;
+  /* padding: 20px; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  /* background-color: rgb(197, 197, 197); */
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(24, 30px);
+  grid-template-rows: repeat(5, 60px);
+  grid-gap: 5px;
+}
+
+.fade-in-bottom {
+  -webkit-animation: fade-in-bottom 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s both;
+  animation: fade-in-bottom 0.7s cubic-bezier(0.39, 0.575, 0.565, 1) 0.3s both;
+  transition: 550ms;
+}
+
+.key {
+  background-color: rgb(243, 243, 243);
+  border: 2px solid black;
+  border-radius: 5px;
+  grid-column: span 2;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 17px;
+}
+
+.key:hover {
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+}
+
+.delete {
+  grid-column: span 4;
+}
+
+.enter {
+  grid-column: span 4;
+}
+
+.backslash {
+  grid-column: span 3;
+}
+
+.capslock {
+  grid-column: span 6;
+}
+
+.rightshift {
+  grid-column: span 6;
+}
+
+.command {
+  grid-column: span 4;
+}
+
+.space {
+  grid-column: span 20;
+}
+
+.active {
+  color: greenyellow;
+}
+
+@media screen and (max-width: 950px) {
+}
