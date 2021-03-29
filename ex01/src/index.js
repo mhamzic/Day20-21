@@ -1,6 +1,7 @@
 var keyElement = document.querySelectorAll(".key");
 var textInput = document.getElementById("textInput");
 const keyboardBase = document.querySelector(".keyboard-base");
+var shiftActive = false;
 
 textInput.addEventListener("focus", () => {
   keyboardBase.classList.remove("keyboard-hidden");
@@ -55,15 +56,20 @@ function toCapsLock() {
   }
 }
 
+// Ovo treba da se unaprijedi. Trenutno je identicno funkciji capslock
 function toShift() {
-  //   var clickCount = 0;
-  //   var shiftMode = document.querySelector(".rightshift");
-  //   shiftMode.classList.toggle("shiftActive");
-  //   console.log("shift");
-  //   if (shiftMode.classList.contains("shiftActive")) {
-  //     keyElement.forEach((el) => {
-  //       let el1 = el.innerHTML.toUpperCase();
-  //       el.innerHTML = el1;
-  //     });
-  //   }
+  console.log("To shift function");
+  shiftActive = !shiftActive;
+  if (shiftActive) {
+    keyElement.forEach((el) => {
+      let el1 = el.innerHTML.toUpperCase();
+      el.innerHTML = el1;
+    });
+  } else {
+    keyElement.forEach((el) => {
+      let el1 = el.innerHTML.toLowerCase();
+      el.innerHTML = el1;
+    });
+    console.log(shiftActive);
+  }
 }
